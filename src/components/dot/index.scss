@@ -1,0 +1,41 @@
+.dot {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #2a2a2a;
+    margin-right: 15px;
+    justify-content: center;
+    align-items: center;
+
+    // Default State
+    transform: scaleX(1);
+
+    &:last-child {
+        margin-right: 0px;
+    }
+
+    .character {
+        font-size: xx-large;
+        color: transparent;
+        background-color: transparent;
+    }
+}
+
+.transition {
+    // Transition Values
+    -webkit-transition: all 1s ease;  
+    -moz-transition: all 1s ease;  
+    -o-transition: all 1s ease;  
+    -ms-transition: all 1s ease;  
+    transition: all 1s ease;
+}
+
+.dotCollapse {
+    transform: scaleX(0);
+}
+
+.textExpand {
+    transform: scaleX(1);
+}
+
