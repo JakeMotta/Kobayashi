@@ -2,13 +2,19 @@
     display: flex;
     flex: 1;
     flex-direction: column;
+    justify-content: center;
 
     .kobayashi-display {
         display: flex;
-        flex: 1;
         justify-content: center;
         align-items: center;
         padding: 0px 25px;
+        flex-wrap: wrap;
+    }
+
+    /* add a corresponding positive top margin to all flex items (all direct children of the flex container) */
+    .kobayashi-display > * {
+        margin-top: 25px;
     }
 
     .expand-wrapper {

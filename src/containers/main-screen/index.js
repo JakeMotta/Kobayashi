@@ -1,18 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
-import { get, isEqual } from "lodash";
-import BottomSlider from "../../components/bottom-slider";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 import Dot from "../../components/dot";
 import InvisibleTextInput from "../../components/invisible-text-input";
 import "./index.scss";
-
-let dotOffsetInterval = 500;
 
 const MainScreen = () => {
     const [inputText, setInputText] = useState("");
     const [isAnimating, setIsAnimating] = useState(false);
     const [animationArray, setAnimationArray] = useState([]);
+
+    let dotOffsetInterval = inputText.length > 20 ? 500 - (2 * inputText.length) : 500;
 
     // Listens for user keyboard events
     const useEventListener = (eventName, handler, element = window) => {
@@ -31,11 +27,11 @@ const MainScreen = () => {
         }, [eventName, element]);
     }
 
+    // Acceptable triggers to play our animation
     const ACCEPTANCE_KEYS = ["enter"];
 
     const handler = ({key}) => {
         if(ACCEPTANCE_KEYS.includes(key.toLowerCase())) setIsAnimating(true);
-        // console.log("key: ", {key: key.toLowerCase(), v: ACCEPTANCE_KEYS.includes(key.toLowerCase()) , isAnimating, inputText, animationArray});
     }
 
     useEventListener("keydown", handler);
@@ -58,19 +54,6 @@ const MainScreen = () => {
     useEffect(() => {
         console.log("array: ", {animationArray, inputText});
     }, [animationArray]);
-
-
-    // Listen for 'isAnimating' state changes
-    useEffect(() => {
-        if(isAnimating) createStringArray();
-    }, [isAnimating]);
-
-    const createStringArray = () => {
-        let arr = [];
-        for(let i = 0; i < inputText.length; i++) 
-            arr.push(inputText[i]);
-        setAnimationArray(arr);
-    }
 
     return (
         <div className="main-screen">
