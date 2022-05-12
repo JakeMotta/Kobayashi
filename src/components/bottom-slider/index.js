@@ -6,7 +6,7 @@ import "./index.scss";
 const BottomSlider = ({visible, inputText, setInputText, setIsAnimating}) => {
     const sliderRef = useRef(null);
 
-    // Sets the initial he  ight / offset
+    // Sets the initial height / offset
     useEffect(() => {
         let sliderHeight = sliderRef.current.getBoundingClientRect().height;
         sliderRef.current.style.height = sliderHeight + "px";
@@ -15,7 +15,12 @@ const BottomSlider = ({visible, inputText, setInputText, setIsAnimating}) => {
 
     // Triggers our animation when 'visible' is toggled
     useEffect(() => {
-        if(visible) sliderRef.current.classList.add("slideIn")
+        if(visible) {
+            sliderRef.current.classList.add("slideIn");
+            console.log("slider: ", sliderRef);
+            // sliderRef.focus();
+            // sliderRef.select();
+        }
         else sliderRef.current.classList.remove("slideIn")
     }, [visible])
 

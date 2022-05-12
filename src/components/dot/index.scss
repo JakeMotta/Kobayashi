@@ -1,10 +1,13 @@
 .dot {
     display: flex;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    width: 2.5vw;
+    height: 2.5vw;
+    min-width: 2.5vw;
+    min-height: 2.5vw;
+    border-radius: 100%;
     background-color: #2a2a2a;
-    margin-right: 15px;
+    // background-color: rgba(0,0,0,.5);
+    margin-right: 1vw;
     justify-content: center;
     align-items: center;
 
@@ -16,7 +19,7 @@
     }
 
     .character {
-        font-size: xx-large;
+        font-size: 1.5vw;
         color: transparent;
         background-color: transparent;
     }

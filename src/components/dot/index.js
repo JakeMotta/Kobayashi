@@ -2,17 +2,19 @@ import React, {useEffect, useRef, useState} from "react";
 import { get, isEqual } from "lodash";
 import "./index.scss";
 
-const Dot = ({value, offset}) => {
+const Dot = ({value, offset, animate}) => {
     const dotRef = useRef(null);
     const [transformA, setTransformA] = useState(false);
     const [transformB, setTransformB] = useState(false);
 
     useEffect(() => {
-        let countDown = setTimeout(() => {
-            clearTimeout(countDown);
-            setTransformA(true);
-        }, offset);
-    }, [])
+        if(animate) {
+            let countDown = setTimeout(() => {
+                clearTimeout(countDown);
+                setTransformA(true);
+            }, offset);
+        }
+    }, [animate])
 
     useEffect(() => {
         if(transformA) {

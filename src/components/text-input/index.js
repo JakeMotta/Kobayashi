@@ -6,7 +6,7 @@ const TextInput = ({inputText, setInputText, setIsAnimating}) => {
 
     return (
         <div className="text-input-wrapper">
-            <input className="text-input" value={inputText} onChange={(e) => setInputText(e.target.value)} />
+            <input id="kobayashi-input" className="text-input" value={inputText} onChange={(e) => setInputText(e.target.value)} />
             <button className="myButton" onClick={() => setIsAnimating(true)}> Kobayashi-San! </button>
         </div>
     )
