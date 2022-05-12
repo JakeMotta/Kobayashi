@@ -6,13 +6,12 @@
     min-height: 2.5vw;
     border-radius: 100%;
     background-color: #2a2a2a;
-    // background-color: rgba(0,0,0,.5);
     margin-right: 1vw;
     justify-content: center;
     align-items: center;
 
     // Default State
-    transform: scaleX(1);
+    transform: scale(1, 1);
 
     &:last-child {
         margin-right: 0px;
@@ -27,18 +26,31 @@
 
 .transition {
     // Transition Values
-    -webkit-transition: all 1s ease;  
-    -moz-transition: all 1s ease;  
-    -o-transition: all 1s ease;  
-    -ms-transition: all 1s ease;  
-    transition: all 1s ease;
+    -webkit-transition: all .25s ease;  
+    -moz-transition: all .25s ease;  
+    -o-transition: all .25s ease;  
+    -ms-transition: all .25s ease;  
+    transition: all .25s ease;
 }
 
-.dotCollapse {
-    transform: scaleX(0);
+.dotTransition {
+    transform: scale(.5, 1);
+    
+}
+
+.blur {
+    -webkit-filter: blur(2.5px);
+    -moz-filter: blur(2.5px);
+    -o-filter: blur(2.5px);
+    -ms-filter: blur(2.5px);
+    filter: blur(2.5px);
+}
+
+.textInit {
+    transform: scale(1,1.5);
 }
 
 .textExpand {
-    transform: scaleX(1);
+    transform: scale(1, 1);
 }
 
