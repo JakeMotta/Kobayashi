@@ -1,5 +1,4 @@
 import React, {useEffect, useRef, useState} from "react";
-import { get, isEqual } from "lodash";
 import "./index.scss";
 
 const Dot = ({value, offset, animate}) => {

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { get, isEqual } from "lodash";
+import React from "react";
 import "./index.scss";
 
 const InvisibleTextInput = ({inputText, setInputText}) => (

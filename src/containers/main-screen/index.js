@@ -50,11 +50,6 @@ const MainScreen = () => {
         }
     }, [inputText]);
 
-    // Listen for input changes from user
-    useEffect(() => {
-        console.log("array: ", {animationArray, inputText});
-    }, [animationArray]);
-
     return (
         <div className="main-screen">
             <InvisibleTextInput inputText={inputText} setInputText={setInputText} setIsAnimating={setIsAnimating} />
